@@ -5,13 +5,11 @@
 class Estoque
 {
     private:
-        std::vector<Produto*> _produtos;
+        std::vector<Produto*> _Produtos;
         int id;
     public:
         //id deve ser iniciado junto com com construtor
         Estoque();
-        void retiraProduto();
-        void adcionarProduto();
-        void retiraProdutoPorTipo();
-        void adcionarProdutoPorTipo();
+        void retiraProdutoNome(std::string NomeProduto);
+        void adcionarProduto(Produto*);
 };

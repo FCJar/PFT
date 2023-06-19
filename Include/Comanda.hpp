@@ -13,8 +13,10 @@ class Comanda
         std::string _FormaPagamento, _DataVenda,_Endereco;
         std::vector<Produto*> _Produtos;
     public:
-        Comanda(int Id,int IdAtendente,std::string FormaPagamento);
-        void getAdcionarProdutoNome(std::string NomeProduto);
+
+        Comanda(int IdAtendente,std::string FormaPagamento);
+        void setId(int id);
+        void getAdcionarProduto(Produto* p);
         void getRetirarProdutoNome(std::string NomeProduto);
         int getId();
         int getIdAtendente();

@@ -6,7 +6,7 @@ class Estoque
 {
     private:
         std::vector<Produto*> _Produtos;
-        int id;
+        int _Id;
     public:
         //id deve ser iniciado junto com com construtor
         Estoque();

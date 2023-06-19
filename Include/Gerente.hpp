@@ -9,6 +9,9 @@ class Gerente : public Funcionario
     private:
         int senha;
     public:
+        Gerente(int senha);
         void ConsultarLucroPorDia();
+        double RetornarVendasaDiariasPorFuncionario(int idFunc,std::string dia);
+        double RetornarVendasTotaisPorFuncionario(int idFunc); 
 
 };

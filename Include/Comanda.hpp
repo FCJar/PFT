@@ -25,7 +25,8 @@ class Comanda
         std::string getFormaPagamento();
         std::string getDataVenda();
         std::string getEndereco();
-        std::string getRetirarProdutoNome(std::string nomeProduto);
+        void Comanda::setFormaPaga(std::string fp);
+        void getRetirarProdutoNome(std::string nomeProduto);
 
 };
 

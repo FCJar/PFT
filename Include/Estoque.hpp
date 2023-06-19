@@ -13,7 +13,8 @@ class Estoque
     public:
         //id deve ser iniciado junto com com construtor
         Estoque();
-        std::string retiraProdutoNome(std::string nomeProduto);
+        void retiraProdutoNome(std::string nomeProduto);
+        Produto* venderProdutoemEstoque(std::string nomeProduto);
         void infoProduto();
         void adcionarProduto(Produto* p);
         void retornarProduto(Produto* p);

@@ -4,7 +4,8 @@ Estoque::Estoque(){
     Estoque::_IdRegistro=0;
 };
 
-std::string Estoque::retiraProdutoNome(std::string nomeProduto){
+void Estoque::retiraProdutoNome(std::string nomeProduto){
+    //e necessario throw a error msg em caso de produto não encontrado
     int aux=0;
     std::string msg="";
     for (int i=0;i<Estoque::_Produtos.size();i++)
@@ -14,12 +15,21 @@ std::string Estoque::retiraProdutoNome(std::string nomeProduto){
             aux=1;
         };
     }; 
+};
 
-    if(aux==0){
-        msg="Produto não encontrado";
+Produto* Estoque::venderProdutoemEstoque(std::string nomeProduto){
+    //e necessario throw a error msg em caso de produto não encontrado
+    int aux=0;
+    Produto* p;
+    for (int i=0;i<Estoque::_Produtos.size();i++)
+    {
+        if(Estoque::_Produtos[i]->getNome()==nomeProduto){
+            Estoque::_Produtos.erase(_Produtos.begin()+i);
+            aux=1;
+            p=_Produtos[i];
+        };
     };
-
-    return msg;
+    return p;
 };
 
 void Estoque::infoProduto(){

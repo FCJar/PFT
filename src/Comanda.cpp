@@ -55,9 +55,9 @@ std::string Comanda::getEndereco(){
     return Comanda::_Endereco;
 };
 
-std::string Comanda::getRetirarProdutoNome(std::string nomeProduto){
+void Comanda::getRetirarProdutoNome(std::string nomeProduto){
+//necessario throw a error
     int aux=0;
-    std::string msg="";
     for (int i=0;i<Comanda::_Produtos.size();i++)
     {
         if(Comanda::_Produtos[i]->getNome()==nomeProduto){
@@ -65,10 +65,9 @@ std::string Comanda::getRetirarProdutoNome(std::string nomeProduto){
             aux=1;
         };
     }; 
+    
+};
 
-    if(aux==0){
-        msg="Produto não encontrado";
-    };
-
-    return msg;
+void Comanda::setFormaPaga(std::string fp){
+    Comanda::_FormaPagamento=fp;
 };

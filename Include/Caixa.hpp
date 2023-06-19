@@ -20,6 +20,8 @@ class Caixa
         void AdcionarComanda(Comanda* C);
         double RetornarLucroPorDia(std::string dia);
         double RetornarDinheiroCxPorDia(std::string dia);
+        double RetornarVendasPorFuncionario(int idAtendente);
+        double RetornarVendasPorFuncionarioPorDia(int idAtendente,std::string dia);
 };
 
 #endif /* CAIXA_HPP */

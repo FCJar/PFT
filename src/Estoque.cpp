@@ -4,19 +4,19 @@ Estoque::Estoque(){
     Estoque::_IdRegistro=0;
 };
 
-std::string Estoque::retiraProdutoNome(std::string NomeProduto){
+std::string Estoque::retiraProdutoNome(std::string nomeProduto){
     int aux=0;
     std::string msg="";
     for (int i=0;i<Estoque::_Produtos.size();i++)
     {
-        if(Estoque::_Produtos[i]->getNome()==NomeProduto){
+        if(Estoque::_Produtos[i]->getNome()==nomeProduto){
             Estoque::_Produtos.erase(_Produtos.begin()+i);
             aux=1;
-        }
+        };
     }; 
 
     if(aux==0){
-        msg="Produto indidponivel";
+        msg="Produto não encontrado";
     };
 
     return msg;

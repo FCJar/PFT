@@ -1,8 +1,10 @@
+#ifndef FUNCIONARIO_HPP
+#define FUNCIONARIO_HPP
+
 #include <string>
 #include "Produto.hpp"
 #include "Comanda.hpp"
 #include <vector>
-
 
 class Funcionario
 {
@@ -19,3 +21,4 @@ class Funcionario
         void PagarComanda();
 };
 
+#endif /* FUNCIONARIO_HPP */

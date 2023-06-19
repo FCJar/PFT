@@ -1,3 +1,6 @@
+#ifndef CAIXA_HPP
+#define CAIXA_HPP
+
 #include <string>
 #include "Produto.hpp"
 #include "Comanda.hpp"
@@ -7,12 +10,16 @@
 class Caixa
 {
     private:
-        double DindheiroCx;
+        double _IdCaixa,_IdComanda;
+        double _DindheiroCx,_LucroTotal;
         std::vector <Comanda*> _comandasPagas;
     public:
-        void RetornarDinheiroCx();
-        void RetornarLucroTotal();
+        Caixa(int idCaixa);
+        double RetornarDinheiroCx();
+        double RetornarLucroTotal();
         void AdcionarComanda(Comanda* C);
-        void RetornarLucroPorDia(std::string dia);
-    
+        double RetornarLucroPorDia(std::string dia);
+        double RetornarDinheiroCxPorDia(std::string dia);
 };
+
+#endif /* CAIXA_HPP */

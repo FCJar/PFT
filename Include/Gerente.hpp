@@ -1,3 +1,6 @@
+#ifndef GERENTE_HPP
+#define GERENTE_HPP
+
 #include <string>
 #include "Produto.hpp"
 #include "Comanda.hpp"
@@ -7,11 +10,14 @@
 class Gerente : public Funcionario
 {   
     private:
-        int senha;
+        int _Senha;
     public:
-        Gerente(int senha);
-        void ConsultarLucroPorDia();
-        double RetornarVendasaDiariasPorFuncionario(int idFunc,std::string dia);
-        double RetornarVendasTotaisPorFuncionario(int idFunc); 
+        Gerente(int senha,int id,int cpf,double salario);
+        double Gerente::RetornarLucroTotal(Caixa* cx);
+        double ConsultarLucroPorDia(Caixa* cx,std::string dia);
+        double RetornarVendasaDiariasPorFuncionario(Caixa* cx,int idFunc,std::string dia);
+        double RetornarVendasTotaisPorFuncionario(Caixa* cx,int idFunc); 
 
 };
+
+#endif /* GERENTE_HPP */

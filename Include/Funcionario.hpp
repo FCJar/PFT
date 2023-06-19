@@ -16,6 +16,7 @@ class Funcionario
         double _Salario;
         Comanda* _ComandasEmPendente;
     public:
+        int getId();
         Funcionario(int id,int cpf,double salario);
         void CriarComada(std::string formaPagamento,std::string endereco);
         void VenderItem(Estoque* e,std::string nomeProduto);

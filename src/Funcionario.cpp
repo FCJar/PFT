@@ -1,5 +1,9 @@
 #include "Funcionario.hpp"
 
+int Funcionario::getId(){
+    return Funcionario::_Id;
+};
+
 Funcionario::Funcionario(int id,int cpf,double salario){
     Funcionario::_Id=id;
     Funcionario::_Cpf=cpf;

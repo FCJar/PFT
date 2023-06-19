@@ -7,8 +7,9 @@ class Atendente : public Funcionario
 {
 
     public:
-    double RetornarVendasaDiarias(std::string dia);
-    double RetornarVendasTotais(); 
+        Atendente(int id,int cpf,double salario);
+        double RetornarVendasaDiarias(Caixa* cx,std::string dia);
+        double RetornarVendasTotais(Caixa* cx); 
     
 };
 

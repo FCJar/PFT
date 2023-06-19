@@ -1,6 +1,6 @@
 #include "Comanda.hpp"
 
-Comanda::Comanda(int IdAtendente,std::string FormaPagamento);
+Comanda::Comanda(int IdAtendente, std::string FormaPagamento);
 void setId(int id);
 void getAdcionarProduto(Produto* p);
 void getRetirarProdutoNome(std::string NomeProduto);

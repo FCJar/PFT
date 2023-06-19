@@ -28,4 +28,4 @@ class Comanda
 
 };
 
-#endif /* ESTOQUE_HPP */
+#endif /* COMANDA_HPP */

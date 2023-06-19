@@ -1,11 +1,14 @@
 #include "Produto.hpp"
 
-Produto::Produto (int id,std::string nome,std::string tipo,double preco,double lucroProduto){
-    Produto::_Id=id;
+Produto::Produto (std::string nome,std::string tipo,double preco,double lucroProduto){
     Produto::_Nome=nome;
     Produto::_Tipo=tipo;
     Produto::_Preco=preco;
     Produto::_LucroProduto=lucroProduto;
+};
+
+void Produto::setId(int id){
+    Produto::_Id=id;
 };
 
 int Produto::getId(){

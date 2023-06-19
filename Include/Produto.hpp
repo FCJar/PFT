@@ -7,7 +7,8 @@ class Produto
         std::string _Nome, _Tipo, _DataValidade;
         double _Preco, _LucroProduto;
     public:
-        Produto (int id,std::string nome,std::string tipo,double preco,double lucroProduto);
+        Produto (std::string nome,std::string tipo,double preco,double lucroProduto);
+        void setId(int id);
         int getId();
         std::string getNome();
         std::string getTipo();

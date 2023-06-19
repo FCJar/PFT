@@ -1,3 +1,6 @@
+#ifndef COMANDA_HPP
+#define COMANDA_HPP
+
 #include <string>
 #include "Produto.hpp"
 #include <vector>
@@ -23,3 +26,4 @@ class Comanda
 
 };
 
+#endif /* ESTOQUE_HPP */

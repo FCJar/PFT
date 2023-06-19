@@ -1,3 +1,6 @@
+#ifndef ESTOQUE_HPP
+#define ESTOQUE_HPP
+
 #include <string>
 #include <vector>
 #include "Produto.hpp"
@@ -15,3 +18,5 @@ class Estoque
         void adcionarProduto(Produto* p);
         void retornarProduto(Produto* p);
 };
+
+#endif /* ESTOQUE_HPP */

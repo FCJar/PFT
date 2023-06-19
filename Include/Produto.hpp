@@ -1,3 +1,6 @@
+#ifndef PRODUTO_HPP
+#define PRODUTO_HPP
+
 #include <string>
 
 class Produto
@@ -16,3 +19,5 @@ class Produto
         double getPreco();
         double getLucroProduto();
 };
+
+#endif /* PRODUTO_HPP */

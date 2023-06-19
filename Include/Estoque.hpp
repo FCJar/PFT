@@ -11,6 +11,7 @@ class Estoque
         //id deve ser iniciado junto com com construtor
         Estoque();
         std::string retiraProdutoNome(std::string NomeProduto);
+        void infoProduto();
         void adcionarProduto(Produto* p);
         void retornarProduto(Produto* p);
 };

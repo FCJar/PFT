@@ -1,13 +1,16 @@
-#include"Atendente.hpp"
+#include "Atendente.hpp"
 
 Atendente::Atendente(int id,int cpf,double salario):Atendente::Funcionario(id,cpf,salario){};
 
 double Atendente::RetornarVendasaDiarias(Caixa* cx,std::string dia){
-    cx->RetornarVendasPorFuncionarioPorDia(Atendente::getId(),dia);
+    double valor = cx->RetornarVendasPorFuncionarioPorDia(Atendente::getId(),dia);
+    return valor;
+
 };
 
 double Atendente::RetornarVendasTotais(Caixa* cx){
-    cx->RetornarVendasPorFuncionario(Atendente::getId());
+   double valor= cx->RetornarVendasPorFuncionario(Atendente::getId());
+    return valor;
 }; 
     
 

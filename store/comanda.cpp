@@ -6,20 +6,31 @@ Comanda::Comanda()
 
 }
 
-Comanda::Comanda(int idAtendente, std::string formaPagamento,std::string endereco){
-    Comanda::_Endereco=endereco;
-    Comanda::_IdAtendente=idAtendente;
-    Comanda::_FormaPagamento=formaPagamento;
-};
+// Setter methods
+void Comanda::setTotal(float Total) {
+    _PrecoTotal = Total;
+}
 
-void Comanda::setId(int id){
-    Comanda::_Id=id;
-};
+void Comanda::setNumeroCartao(QString NumeroCartao) {
+    _NumeroCartao = NumeroCartao;
+}
+
+void Comanda::setNomeCliente(QString NomeCliente) {
+    _NomeCliente = NomeCliente;
+}
+
+void Comanda::setId() {
+    _Id = rand()%(1000000000 - 1000000 + 1) + 1000000; // inteiro entre 1 milhao e 1 bilhao
+}
+
+void Comanda::setIdAtendente() {
+    _IdAtendente = rand()%(1000000000 - 1000000 + 1) + 1000000; // inteiro entre 1 milhao e 1 bilhao
+}
 
 void Comanda::getAdcionarProduto(Produto* p){
-    Comanda::_Produtos.push_back(p);
-    Comanda::_PrecoTotal=Comanda::_PrecoTotal+p->getPreco();
-    Comanda::_TaxaLucro=Comanda::_TaxaLucro+p->getLucroProduto();
+    _Produtos.push_back(p);
+    _PrecoTotal=Comanda::_PrecoTotal+p->getPreco();
+    _TaxaLucro=Comanda::_TaxaLucro+p->getLucroProduto();
 };
 
 void Comanda::imprimirInfoComanda(){
@@ -32,41 +43,51 @@ void Comanda::imprimirInfoComanda(){
     };
 };
 
+// Getters
+
 int Comanda::getId(){
-    return Comanda::_Id;
+    return _Id;
 };
 
 int Comanda::getIdAtendente(){
-    return Comanda::_IdAtendente;
+    return _IdAtendente;
 };
 
 double Comanda::getPrecoTotal(){
-    return Comanda::_PrecoTotal;
+    return _PrecoTotal;
 };
 
 double Comanda::getTaxaLucro(){
-    return Comanda::_TaxaLucro;
+    return _TaxaLucro;
 };
 
 std::string Comanda::getFormaPagamento(){
-    return Comanda::_FormaPagamento;
+    return _FormaPagamento;
 };
 
 std::string Comanda::getDataVenda(){
-    return Comanda::_DataVenda;
+    return _DataVenda;
 };
 
 std::string Comanda::getEndereco(){
-    return Comanda::_Endereco;
+    return _Endereco;
+};
+
+QString Comanda::getNomeCliente(){
+    return _NomeCliente;
+};
+
+QString Comanda::getNumeroCartao(){
+    return _NumeroCartao;
 };
 
 void Comanda::getRetirarProdutoNome(std::string nomeProduto){
     //necessario throw a error
     int aux=0;
-    for (int i=0;i<Comanda::_Produtos.size();i++)
+    for (int i=0;i<_Produtos.size();i++)
     {
-        if(Comanda::_Produtos[i]->getNome()==nomeProduto){
-            Comanda::_Produtos.erase(_Produtos.begin()+i);
+        if(_Produtos[i]->getNome()==nomeProduto){
+            _Produtos.erase(_Produtos.begin()+i);
             aux=1;
         };
     };
@@ -74,5 +95,5 @@ void Comanda::getRetirarProdutoNome(std::string nomeProduto){
 };
 
 void Comanda::setFormaPaga(std::string fp){
-    Comanda::_FormaPagamento=fp;
+    _FormaPagamento=fp;
 };

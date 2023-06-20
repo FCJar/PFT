@@ -1,30 +1,40 @@
 #include "produto.h"
+Produto::Produto() {}
 
-Produto::Produto (std::string nome,std::string tipo,double preco,double lucroProduto){
-    Produto::_Nome=nome;
-    Produto::_Tipo=tipo;
-    Produto::_Preco=preco;
-    Produto::_LucroProduto=lucroProduto;
-};
+Produto::Produto(std::string nome, std::string tipo, float preco, float lucroProduto)
+    : _Nome(nome), _Tipo(tipo), _Preco(preco), _LucroProduto(lucroProduto) {}
+
+// Setter methods
+void Produto::setNome(std::string nome) {
+    _Nome = nome;
+}
+
+void Produto::setTipo(std::string tipo) {
+    _Tipo = tipo;
+}
+
+void Produto::setPreco(float preco) {
+    _Preco = preco;
+}
+
+void Produto::setLucroProduto(float lucroProduto) {
+    _LucroProduto = lucroProduto;
+}
 
 void Produto::setId(int id){
-    Produto::_Id=id;
+    _Id=id;
 };
 
 int Produto::getId(){
-    return Produto::_Id;
+    return _Id;
 };
 
 std::string Produto::getNome(){
-    return Produto::_Nome;
+    return _Nome;
 };
 
 std::string Produto::getTipo(){
-    return Produto::_Tipo;
-};
-
-std::string Produto::getDataValidade(){
-    return Produto::_DataValidade;
+    return _Tipo;
 };
 
 std::string Produto::getDataValidade(){
@@ -32,7 +42,7 @@ std::string Produto::getDataValidade(){
 };
 
 double Produto::getPreco(){
-    return Produto::_Preco;
+    return _Preco;
 };
 
 double Produto::getLucroProduto(){

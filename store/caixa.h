@@ -14,6 +14,7 @@ private:
     double _DindheiroCx,_LucroTotal;
     std::vector <Comanda*> _comandasPagas;
 public:
+    Caixa();
     Caixa(int idCaixa);
     double RetornarDinheiroCx();
     double RetornarLucroTotal();

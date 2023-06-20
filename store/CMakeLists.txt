@@ -14,6 +14,20 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
+        atendente.cpp
+        atendente.h
+        caixa.cpp
+        caixa.h
+        comanda.cpp
+        comanda.h
+        estoque.cpp
+        estoque.h
+        funcionario.cpp
+        funcionario.h
+        gerente.cpp
+        gerente.h
+        produto.cpp
+        produto.h
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui

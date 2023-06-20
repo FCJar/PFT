@@ -38,6 +38,8 @@ private slots:
 
     void on_totalPrice_linkActivated(const QString &link);
 
+    void on_pushButtonGoToCart_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

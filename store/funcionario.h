@@ -18,12 +18,13 @@ private:
     Comanda* _ComandasEmPendente;
 public:
     int getId();
+    Funcionario();
     Funcionario(int id,int cpf,double salario);
     void CriarComada(std::string formaPagamento,std::string endereco);
     void VenderItem(Estoque* e,std::string nomeProduto);
     void RetirarProdutoComanda(std::string nomePr);
     void MudarFormaDePagamento(std::string Fp);
-    void PagarComanda(Caixa* cx);
+    // void PagarComanda(Caixa* cx);
 };
 
 #endif // FUNCIONARIO_H

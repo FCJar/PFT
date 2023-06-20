@@ -61,6 +61,7 @@ void Comanda::getRetirarProdutoNome(std::string nomeProduto){
     for (int i=0;i<Comanda::_Produtos.size();i++)
     {
         if(Comanda::_Produtos[i]->getNome()==nomeProduto){
+            delete  _Produtos[i];
             Comanda::_Produtos.erase(_Produtos.begin()+i);
             aux=1;
         };

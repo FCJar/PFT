@@ -11,6 +11,7 @@ void Estoque::retiraProdutoNome(std::string nomeProduto){
     for (int i=0;i<Estoque::_Produtos.size();i++)
     {
         if(Estoque::_Produtos[i]->getNome()==nomeProduto){
+            delete Estoque::_Produtos[i];
             Estoque::_Produtos.erase(_Produtos.begin()+i);
             aux=1;
         };
@@ -24,9 +25,9 @@ Produto* Estoque::venderProdutoemEstoque(std::string nomeProduto){
     for (int i=0;i<Estoque::_Produtos.size();i++)
     {
         if(Estoque::_Produtos[i]->getNome()==nomeProduto){
+            p=_Produtos[i];
             Estoque::_Produtos.erase(_Produtos.begin()+i);
             aux=1;
-            p=_Produtos[i];
         };
     };
     return p;

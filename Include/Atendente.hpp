@@ -2,6 +2,7 @@
 #define ATENDENTE_HPP
 
 #include "Funcionario.hpp"
+#include "Caixa.hpp"
 
 class Atendente : public Funcionario
 {

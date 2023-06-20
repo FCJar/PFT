@@ -28,6 +28,16 @@ private slots:
 
     void on_pushButtonBackToCart_2_clicked();
 
+    void on_pushButtonCoke_clicked();
+
+    void on_pushButtonPepsi_clicked();
+
+    void on_pushButtonSprite_clicked();
+
+    void on_pushButtonFanta_clicked();
+
+    void on_totalPrice_linkActivated(const QString &link);
+
 private:
     Ui::MainWindow *ui;
 };

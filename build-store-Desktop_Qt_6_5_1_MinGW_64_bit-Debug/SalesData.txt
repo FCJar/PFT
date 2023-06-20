@@ -1,0 +1,58 @@
+Receipt Number: 1001750
+Customer Name:  Lucas Laredo
+Card Information: 12345678910
+---------------------------------------------
+Items 		 Price
+Coke		6
+Pepsi		4
+Sprite		3.5
+Total Value: 		13.5
+Receipt Number: 1002083
+Customer Name: Laredindin
+Card Information: 12345678910
+---------------------------------------------
+Items 		 Price
+Fanta		4.75
+Fanta		4.75
+Sprite		3.5
+Sprite		3.5
+Pepsi		4
+Pepsi		4
+Coke		6
+Coke		6
+Total Value: 		36.5
+---------------------------------------------
+Receipt Number: 1002325
+Customer Name: Messi		
+Card Information: 1234567895
+---------------------------------------------
+Items 		 Price
+Coke		6
+Pepsi		4
+Pepsi		4
+Coke		6
+Pepsi		4
+Sprite		3.5
+Fanta		4.75
+Total Value: 		32.25
+---------------------------------------------
+Receipt Number: 1002550
+Customer Name: Cr7	
+Card Information: 1212
+---------------------------------------------
+Items 		 Price
+Fanta		4.75
+Fanta		4.75
+Sprite		3.5
+Sprite		3.5
+Total Value: 		16.5
+---------------------------------------------
+Receipt Number: 1002493
+Customer Name: klklklk
+Card Information: 4545454
+---------------------------------------------
+Items 		 Price
+Coke		6
+Pepsi		4
+Total Value: 		10
+---------------------------------------------

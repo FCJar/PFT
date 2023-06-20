@@ -13,14 +13,15 @@
 #include <fstream>
 #include <iostream>
 
-class itemPrice {
+/* class itemPrice {
     public:
         std::string name;
         float price;
-};
+}; */
 
 // globals
 
+int quantidadeCoca = 0;
 // std::vector<itemPrice> itemVector;
 std::vector<Produto> produtoVector;
 float total = 0;
@@ -142,7 +143,6 @@ void MainWindow::on_pushButtonConfirm_clicked()
     ui->stackedWidget->setCurrentIndex(4);
 }
 
-
 void MainWindow::on_pushButtonBackToCart_2_clicked()
 {
     ui->itemsInCartList->clear();
@@ -162,6 +162,8 @@ void MainWindow::on_pushButtonCoke_clicked()
 {
     // itemPrice item;
     Produto Item("Coca Cola", "Refrigerante", 6.0f, 2.0f);
+    quantidadeCoca += 1;
+    ui->quantidade->setText(std::to_string(quantidadeCoca).c_str());
 
     /* item.name = "Coke";
     item.price = 6;
@@ -220,25 +222,26 @@ void MainWindow::on_totalPrice_linkActivated(const QString &link)
 void MainWindow::on_pushButtonGoToCart_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+
     std::ofstream outputFile;
 
-    outputFile.open("SalesData.txt", std::ios::trunc);
+    /* outputFile.open("SalesData.txt", std::ios::trunc);
     if(outputFile) {
         outputFile.close();
     } else {
         std::cout << "Error opening the file" << "\n";
-    }
+    } */
 
     // Criando o nome da atendente
     Atendente atendente;
     atendente.setNome(atendente.sortearNomeAleatorio(nomesDisponiveis)); // defino um nome para a/o atendente
     atendente.setApelido(atendente.sortearApelidoAleatorio(apelidosDisponiveis)); // defino um apelido para a/o atendente
     atendente.setIdade(rand()%(15 + 1) + 15);
-    atendente.setTempoServico(15);
-    ui->nomeAtendente->setText(atendente.getNome());
+    atendente.setTempoServico(rand()%(5 + 1) + 5);
+    ui->nomeAtendente->setText(atendente.getNome()); // setando o textBox de label 'nomeAtendente' para atendente.getNome()
     ui->apelidoAtendente->setText(atendente.getApelido());
     ui->idadeAtendente->setText(std::to_string(atendente.getIdade()).c_str());
-    ui->tempoServicoAtendente->setText(std::to_string(atendente.getIdade()).c_str());
+    ui->tempoServicoAtendente->setText(std::to_string(atendente.getTempoServico()).c_str());
 
     outputFile.open("SalesData.txt", std::ios::app);
 

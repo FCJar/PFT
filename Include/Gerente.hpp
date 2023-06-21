@@ -5,6 +5,7 @@
 #include "Produto.hpp"
 #include "Comanda.hpp"
 #include "Funcionario.hpp"
+#include "Estoque.hpp"
 #include <vector>
 
 class Gerente : public Funcionario
@@ -17,6 +18,7 @@ class Gerente : public Funcionario
         double ConsultarLucroPorDia(Caixa* cx,std::string dia);
         double RetornarVendasaDiariasPorFuncionario(Caixa* cx,int idFunc,std::string dia);
         double RetornarVendasTotaisPorFuncionario(Caixa* cx,int idFunc); 
+        void AdicionarProdutoAoEstoque(Estoque* e,Produto* p);
 
 };
 

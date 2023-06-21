@@ -1,65 +1,95 @@
 #include "Caixa.hpp"
 
 Caixa::Caixa(int idCaixa){
-    Caixa::_IdCaixa=idCaixa;
-    Caixa::_IdComanda=0;
+    this->_IdCaixa=idCaixa;
+    this->_IdComanda=0;
 };
 
 double Caixa::RetornarDinheiroCx(){
-    return Caixa::_DindheiroCx;
+    return this->_DindheiroCx;
 };
 
 double Caixa::RetornarLucroTotal(){
-    return Caixa::_LucroTotal;
+    return this->_LucroTotal;
 };
 
 void Caixa::AdcionarComanda(Comanda* c){
-//necessario throw a error
-    c->setId(Caixa::_IdComanda);
-    Caixa::_IdComanda++;
+    c->setId(this->_IdComanda);
+    this->_IdComanda++;
 };
 
 double Caixa::RetornarLucroPorDia(std::string dia){
-//necessario throw a error
+    int aux=0;
     double lucroPorDia=0;
-    for(int i=0;i<Caixa::_comandasPagas.size();i++){
-        if(_comandasPagas[i]->getDataVenda()==dia){
+
+    for(int i=0;i<this->_comandasPagas.size();i++){
+        if(this->_comandasPagas[i]->getDataVenda()==dia){
             lucroPorDia=_comandasPagas[i]->getTaxaLucro(); 
+            aux=1;
         };
+    };
+
+    if(aux==0){
+        throw std::exception("Lucro do Dia encontrado");
     };
 
     return lucroPorDia;
 }
 
 double Caixa::RetornarDinheiroCxPorDia(std::string dia){
-//necessario throw a error
+    int aux=0;
     double dinheiroCx=0;
-    for(int i=0;i<Caixa::_comandasPagas.size();i++){
-        if(Caixa::_comandasPagas[i]->getDataVenda()==dia){
-            dinheiroCx=_comandasPagas[i]->getPrecoTotal(); 
+    for(int i=0;i<this->_comandasPagas.size();i++){
+        if(this->_comandasPagas[i]->getDataVenda()==dia){
+            dinheiroCx=_comandasPagas[i]->getPrecoTotal();
+            aux=1; 
         };
     };
 
+    if (aux==0)
+    {
+        throw std::exception("Dinheiro em Caixa Por dia não encontrado");
+    }
+    
     return dinheiroCx;
 };
 
 
 double Caixa::RetornarVendasPorFuncionario(int idAtendente){
-//necessario throw a error
+    int aux=0;
     double vendas=0;
-    for(int i=0;i<Caixa::_comandasPagas.size();i++){
-        if(Caixa::_comandasPagas[i]->getIdAtendente()==idAtendente){
-            vendas=_comandasPagas[i]->getPrecoTotal(); 
+    for(int i=0;i<this->_comandasPagas.size();i++){
+        if(this->_comandasPagas[i]->getIdAtendente()==idAtendente){
+            vendas+=_comandasPagas[i]->getPrecoTotal(); 
+            aux=1;
         };
     };
+
+    if (aux==0)
+    {
+        throw std::exception("Id do Funcionario invalido ou funcionario sem vendas");
+    };
+
+    return vendas;
+    
 };
 
 double Caixa::RetornarVendasPorFuncionarioPorDia(int idAtendente,std::string dia){
-//necessario throw a error
+    int aux=0;
     double vendas=0;
-    for(int i=0;i<Caixa::_comandasPagas.size();i++){
-        if(Caixa::_comandasPagas[i]->getIdAtendente()==idAtendente && Caixa::_comandasPagas[i]->getDataVenda()==dia){
-            vendas=_comandasPagas[i]->getPrecoTotal(); 
+    for(int i=0;i<this->_comandasPagas.size();i++){
+        if(this->_comandasPagas[i]->getIdAtendente()==idAtendente && this->_comandasPagas[i]->getDataVenda()==dia){
+            vendas=_comandasPagas[i]->getPrecoTotal();
+            aux=1 ;
         };
     };
+
+    if (aux==0)
+    {
+        throw std::exception("Id do Funcionario invalido, funcionario sem vendas ou dia invalido");
+    }
+    
+
+    return vendas;
+
 };

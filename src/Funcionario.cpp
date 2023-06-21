@@ -1,34 +1,34 @@
 #include "Funcionario.hpp"
 
 int Funcionario::getId(){
-    return Funcionario::_Id;
+    return this->_Id;
 };
 
 Funcionario::Funcionario(int id,int cpf,double salario){
-    Funcionario::_Id=id;
-    Funcionario::_Cpf=cpf;
-    Funcionario::_Salario=salario;
+    this->_Id=id;
+    this->_Cpf=cpf;
+    this->_Salario=salario;
 };
 
 void Funcionario::CriarComada(std::string formaPagamento,std::string endereco){
-    Funcionario::_ComandasEmPendente=new Comanda(Funcionario::_Id,formaPagamento,endereco);    
+    this->_ComandasEmPendente=new Comanda(this->_Id,formaPagamento,endereco);    
 };
 
 void Funcionario::VenderItem(Estoque* e,std::string nomeProduto){
     //e necessario throe a error msg em caso de produto não encontrado
     Produto* p = e->venderProdutoemEstoque(nomeProduto);
-    Funcionario::_ComandasEmPendente->getAdcionarProduto(p);
+    this->_ComandasEmPendente->getAdcionarProduto(p);
 };
 
 void Funcionario::RetirarProdutoComanda(std::string nomePr){
-    Funcionario::_ComandasEmPendente->getRetirarProdutoNome(nomePr);
+    this->_ComandasEmPendente->getRetirarProdutoNome(nomePr);
 };
 
 void Funcionario::MudarFormaDePagamento(std::string fp){
-    Funcionario::_ComandasEmPendente->setFormaPaga(fp);
+    this->_ComandasEmPendente->setFormaPaga(fp);
 };
 
 void Funcionario::PagarComanda(Caixa* cx){
     cx->AdcionarComanda(_ComandasEmPendente);
-    Funcionario::_ComandasEmPendente=nullptr;
+    this->_ComandasEmPendente=nullptr;
 };

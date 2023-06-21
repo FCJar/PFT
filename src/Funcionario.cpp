@@ -32,3 +32,7 @@ void Funcionario::PagarComanda(Caixa* cx){
     cx->AdcionarComanda(_ComandasEmPendente);
     this->_ComandasEmPendente=nullptr;
 };
+
+void Funcionario::DeletarComanda(){
+    delete _ComandasEmPendente;
+}

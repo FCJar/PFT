@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Produto.hpp"
+#include "Estoque.hpp"
 #include <vector>
 
 class Comanda
@@ -27,6 +28,7 @@ class Comanda
         std::string getEndereco();
         void setFormaPaga(std::string fp);
         void getRetirarProdutoNome(std::string nomeProduto);
+        void retornarProdutos(Estoque* e);
 
 };
 

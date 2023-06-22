@@ -1,4 +1,5 @@
-#include "Funcionario.hpp"
+#include "../include/Funcionario.hpp"
+#include <iostream>
 
 int Funcionario::getId(){
     return this->_Id;
@@ -33,6 +34,7 @@ void Funcionario::PagarComanda(Caixa* cx){
     this->_ComandasEmPendente=nullptr;
 };
 
-void Funcionario::DeletarComanda(){
+void Funcionario::DeletarComanda(Estoque* e){
+    this->_ComandasEmPendente->retornarProdutos(e);
     delete _ComandasEmPendente;
-}
+};

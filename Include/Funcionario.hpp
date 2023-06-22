@@ -23,7 +23,7 @@ class Funcionario
         void RetirarProdutoComanda(std::string nomePr);
         void MudarFormaDePagamento(std::string Fp);
         void PagarComanda(Caixa* cx);
-        void DeletarComanda();
+        void DeletarComanda(Estoque* e);
 };
 
 #endif /* FUNCIONARIO_HPP */

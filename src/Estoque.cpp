@@ -1,5 +1,7 @@
-#include "Estoque.hpp"
+#include "../include/Estoque.hpp"
 #include<iostream>
+#include <exception>
+
 Estoque::Estoque(){
     this->_IdRegistro=0;
 };
@@ -17,7 +19,7 @@ void Estoque::retiraProdutoNome(std::string nomeProduto){
 
     if (aux==0)
     {
-        throw std::exception("Produto não encontrado");
+        throw std::invalid_argument("Produto nao encontrado");
     };
     
 
@@ -37,7 +39,7 @@ Produto* Estoque::venderProdutoemEstoque(std::string nomeProduto){
 
     if (aux==0)
     {
-        throw std::exception("Produto não encontrado");
+        throw std::invalid_argument("Produto não encontrado");
     };
     
     return p;

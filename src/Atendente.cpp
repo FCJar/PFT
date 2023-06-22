@@ -1,4 +1,5 @@
-#include "Atendente.hpp"
+#include "../include/Atendente.hpp"
+#include <iostream>
 
 Atendente::Atendente(int id,int cpf,double salario):Atendente::Funcionario(id,cpf,salario){};
 

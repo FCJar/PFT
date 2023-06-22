@@ -1,8 +1,11 @@
-#include "Caixa.hpp"
-
+#include "../include/Caixa.hpp"
+#include <iostream>
+#include <exception>
 Caixa::Caixa(int idCaixa){
     this->_IdCaixa=idCaixa;
     this->_IdComanda=0;
+    this->_DindheiroCx=0;
+    this->_LucroTotal=0;
 };
 
 double Caixa::RetornarDinheiroCx(){
@@ -30,7 +33,7 @@ double Caixa::RetornarLucroPorDia(std::string dia){
     };
 
     if(aux==0){
-        throw std::exception("Lucro do Dia encontrado");
+        throw std::invalid_argument("Lucro do Dia não encontrado");
     };
 
     return lucroPorDia;
@@ -48,7 +51,7 @@ double Caixa::RetornarDinheiroCxPorDia(std::string dia){
 
     if (aux==0)
     {
-        throw std::exception("Dinheiro em Caixa Por dia não encontrado");
+        throw std::invalid_argument("Dinheiro em Caixa Por dia não encontrado");
     }
     
     return dinheiroCx;
@@ -67,7 +70,7 @@ double Caixa::RetornarVendasPorFuncionario(int idAtendente){
 
     if (aux==0)
     {
-        throw std::exception("Id do Funcionario invalido ou funcionario sem vendas");
+        throw std::invalid_argument("Id do Funcionario invalido ou funcionario sem vendas");
     };
 
     return vendas;
@@ -86,7 +89,7 @@ double Caixa::RetornarVendasPorFuncionarioPorDia(int idAtendente,std::string dia
 
     if (aux==0)
     {
-        throw std::exception("Id do Funcionario invalido, funcionario sem vendas ou dia invalido");
+        throw std::invalid_argument("Id do Funcionario invalido, funcionario sem vendas ou dia invalido");
     }
     
 

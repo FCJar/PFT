@@ -1,6 +1,6 @@
-#include "Comanda.hpp"
-#include "iostream"
-
+#include "../include/Comanda.hpp"
+#include <iostream>
+#include <exception>
 Comanda::Comanda(int idAtendente, std::string formaPagamento,std::string endereco){
     this->_Endereco=endereco;
     this->_IdAtendente=idAtendente;
@@ -67,10 +67,17 @@ void Comanda::getRetirarProdutoNome(std::string nomeProduto){
     }; 
     if (aux==0)
     {
-        throw std::exception("Nome Invalido");
+        throw std::invalid_argument("Nome Invalido");
     } 
 };
 
 void Comanda::setFormaPaga(std::string fp){
     this->_FormaPagamento=fp;
+};
+
+void Comanda::retornarProdutos(Estoque* e){
+    for(int i=0;i<=this->_Produtos.size();i++){
+        e->adcionarProduto(this->_Produtos[i]);
+        this->_Produtos.erase(this->_Produtos.begin()+i);
+    };
 };

@@ -14,11 +14,13 @@ class Gerente : public Funcionario
         int _Senha;
     public:
         Gerente(int senha,int id,int cpf,double salario);
-        double Gerente::RetornarLucroTotal(Caixa* cx);
+        double RetornarLucroTotal(Caixa* cx);
         double ConsultarLucroPorDia(Caixa* cx,std::string dia);
         double RetornarVendasaDiariasPorFuncionario(Caixa* cx,int idFunc,std::string dia);
         double RetornarVendasTotaisPorFuncionario(Caixa* cx,int idFunc); 
+        bool ChecarSenha(int id,int senha);
         void AdicionarProdutoAoEstoque(Estoque* e,Produto* p);
+
 
 };
 

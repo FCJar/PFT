@@ -1,4 +1,5 @@
-#include "Produto.hpp"
+#include "../include/Produto.hpp"
+#include <iostream>
 
 Produto::Produto (std::string nome,std::string tipo,double preco,double lucroProduto){
     this->_Nome=nome;
@@ -21,10 +22,6 @@ std::string Produto::getNome(){
 
 std::string Produto::getTipo(){
     return this->_Tipo;
-};
-
-std::string Produto::getDataValidade(){
-    return this->_DataValidade;
 };
 
 std::string Produto::getDataValidade(){
